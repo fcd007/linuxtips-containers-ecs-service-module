@@ -1,0 +1,15 @@
+variable "cluster_name" {}
+
+variable "service_name" {}
+
+variable "vpc_id" {}
+
+variable "private_subnets" {}
+
+variable "service_port" {}
+
+variable "service_cpu" {}
+
+variable "service_memory" {}
+
+variable "service_listener" {}
