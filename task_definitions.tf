@@ -29,7 +29,7 @@ resource "aws_ecs_task_definition" "main" {
         options = {
           "awslogs-group"         = aws_cloudwatch_log_group.main.name
           "awslogs-region"        = var.region
-          "awslogs-stream-prefix" = var.service_name # Corrigido aqui
+          "awslogs-stream-prefix" = var.service_name
         }
       }
 
