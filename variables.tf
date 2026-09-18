@@ -35,3 +35,27 @@ variable "service_health_check" {
 }
 
 variable "service_hosts" {}
+
+## Autoscaling variables
+
+variable "scale_type" {}
+
+variable "task_minimum" {}
+
+variable "task_maximum" {}
+
+### Autoscaling of CPU
+
+variable "scale_out_cpu_threshold" {}
+
+variable "scale_out_adjustment" {}
+
+variable "scale_out_comparison_operator" {}
+
+variable "scale_out_statistic" {}
+
+variable "scale_out_period" {}
+
+variable "scale_out_evaluation_period" {}
+
+variable "scale_out_cooldown" {}
