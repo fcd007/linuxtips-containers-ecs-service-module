@@ -8,12 +8,11 @@ resource "aws_ecs_task_definition" "main" {
   memory = var.service_memory
 
   execution_role_arn = var.service_task_execution_role
-  task_role_arn      = var.service_task_execution_role # Recomendado separar ou omitir se não usado
 
   container_definitions = jsonencode([
     {
       name      = var.service_name
-      image     = format("%s:latest", aws_ecr_repository.main.repository_url)
+      image     = format("%s:%s", data.aws_ecr_repository.main.repository_url, var.image_tag)
       essential = true
 
       portMappings = [
@@ -34,6 +33,7 @@ resource "aws_ecs_task_definition" "main" {
       }
 
       environment = var.environment_variables
+      secrets     = var.secrets
     }
   ])
 }

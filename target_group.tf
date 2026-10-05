@@ -12,7 +12,7 @@ resource "aws_alb_target_group" "main" {
     timeout             = lookup(var.service_health_check, "timeout", 60)
     interval            = lookup(var.service_health_check, "interval", 30)
     matcher             = lookup(var.service_health_check, "matcher", "200")
-    path                = lookup(var.service_health_check, "path", "/healthcheck")
+    path                = lookup(var.service_health_check, "health_check_path", lookup(var.service_health_check, "path", "/healthcheck"))
     port                = lookup(var.service_health_check, "port", var.service_port)
   }
 

@@ -26,6 +26,16 @@ variable "environment_variables" {
   type = list(any)
 }
 
+variable "secrets" {
+  type    = list(any)
+  default = []
+}
+
+variable "image_tag" {
+  type    = string
+  default = "latest"
+}
+
 variable "capabilities" {
   type = list(any)
 }
@@ -75,3 +85,7 @@ variable "scale_in_period" {}
 variable "scale_in_evaluation_period" {}
 
 variable "scale_in_cooldown" {}
+
+### Trancking CPU
+
+variable "scale_track_cpu" {}
